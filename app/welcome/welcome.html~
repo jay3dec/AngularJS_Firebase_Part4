@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>AngularJS & Firebase Web App</title>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="blog.css" rel="stylesheet">
+    
+  </head>
+
+  <body ng-controller="WelcomeCtrl">
+
+   <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item " href="addPost.html">Add Post</a>
+          
+        </nav>
+      </div>
+    </div>
+   <div class="container">
+      <div class="page-header">
+        <h1>AngularJS & Firebase App</h1>
+      </div>
+      <p class="lead">Welcome home <b>{{username}}</b> !!</p>
+      
+      <div class="list-group" ng-repeat="article in articles">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">{{article.title}}</h4>
+    <p class="list-group-item-text">{{article.post}}</p>
+  </a>
+</div>
+    </div> 
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted"></p>
+      </div>
+    </footer>
+
+</body></html>
