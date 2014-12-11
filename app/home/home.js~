@@ -9,7 +9,7 @@ angular.module('myApp.home', ['ngRoute','firebase'])
   });
 }])
 
-.controller('HomeCtrl', ['$scope','$location','sharedProperties','$firebaseSimpleLogin',function($scope,$location,sharedProperties,$firebaseSimpleLogin) {
+.controller('HomeCtrl', ['$scope','$location','CommonProp','$firebaseSimpleLogin',function($scope,$location,CommonProp,$firebaseSimpleLogin) {
   var firebaseObj = new Firebase("https://blistering-heat-2473.firebaseio.com");
 var loginObj = $firebaseSimpleLogin(firebaseObj);
   
@@ -26,8 +26,8 @@ var loginObj = $firebaseSimpleLogin(firebaseObj);
                 //Success callback
                 console.log('Authentication successful');
 		console.log(user);
-		sharedProperties.setProperty(user.email);
-		console.log(sharedProperties.getProperty());
+		CommonProp.setUser(user.email);
+		
 		$location.path('/welcome');
             }, function(error) {
                 //Failure callback

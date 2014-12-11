@@ -29,6 +29,7 @@ angular.module('myApp.register', ['ngRoute','firebase'])
                         // do things if failure
                         console.log(error);
 			$scope.regError = true;
+			$scope.regErrorMessage = error.message;
                     });
             }
         }
